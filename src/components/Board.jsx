@@ -10,8 +10,10 @@ export default function Board({ guesses }) {
     }
 
     return (
-        <div className="board">
-            {board.map((row, index) => <Row key={index} row={row} />)}
-        </div>
+        <table className="board">
+            <tbody>
+                {board.map((row, index) => <Row key={index} row={row} />)}
+            </tbody>
+        </table>
     )
 }
