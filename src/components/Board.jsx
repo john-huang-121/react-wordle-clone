@@ -1,0 +1,17 @@
+import Row from "./Row";
+
+export default function Board({ guesses }) {
+    let board  = Array.from({length: 5}, () => Array.from({ length: 5 }, () => ({ letter: "", status: "empty" })));
+
+    for (let i = 0; i < guesses.length; i++) {
+        for (let j = 0; j < guesses[i].length; j++) {
+            board[i][j] = guesses[i][j];
+        }
+    }
+
+    return (
+        <div className="board">
+            {board.map((row, index) => <Row key={index} row={row} />)}
+        </div>
+    )
+}
